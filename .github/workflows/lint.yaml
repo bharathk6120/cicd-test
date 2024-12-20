@@ -1,0 +1,29 @@
+name: Run Lint
+
+on:
+  push:
+    branches:
+      - staging
+    # Run tests on pull requests as well.
+  pull_request:
+    branches:
+      - staging
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Specify the Node.js version
+
+      # Step 3: Run Lint
+      - name: Run Lint
+        run: npx eslint
