@@ -9,5 +9,3 @@ module.exports = {
     mul,
     div,
 };
-
-const a = 1
