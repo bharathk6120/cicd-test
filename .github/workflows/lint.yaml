@@ -4,13 +4,12 @@ on:
   push:
     branches:
       - staging
-    # Run tests on pull requests as well.
   pull_request:
     branches:
       - staging
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +23,10 @@ jobs:
         with:
           node-version: 18 # Specify the Node.js version
 
-      # Step 3: Run Lint
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run Lint
       - name: Run Lint
-        run: npx eslint
+        run: npx eslint . # Ensure linting runs on all files in the repository
