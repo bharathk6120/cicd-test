@@ -14,6 +14,6 @@ describe('ALU operation', () => {
     });
 
     it('Should return division of 2 values', () => {
-        expect(div(1, 2)).toBe(0.55);
+        expect(div(1, 2)).toBe(0.5);
     });
 });
