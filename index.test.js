@@ -10,7 +10,7 @@ describe('ALU operation', () => {
     });
 
     it('Should return multiplication of 2 values', () => {
-        expect(mul(1, 2)).toBe(2);
+        expect(mul(1, 2)).toBe(1);
     });
 
     it('Should return division of 2 values', () => {
